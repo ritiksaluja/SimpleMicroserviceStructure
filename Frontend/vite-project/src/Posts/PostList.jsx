@@ -9,7 +9,8 @@ function PostList() {
 
 
     const fetchposts = async()=>{
-        const res = await axios.get("http://localhost:4000/posts" )
+        const res = await axios.get("http://localhost:4002/posts" )
+        console.log(res.data)
         setPostLists(res.data)
     }
 
@@ -22,7 +23,7 @@ function PostList() {
         return(
           <div style={{padding:"10px" , border:"2px solid black" , display:"inline-block" , margin:"10px"}} >
             <h3 style={{padding:"10px" , display:"inline-block"}}>{Post.title}</h3>
-            <CommentList postId={Post.id}/>
+            <CommentList comments = {Post.Comments}/>
              <CreateComments  postId={Post.id} />
           </div>
 

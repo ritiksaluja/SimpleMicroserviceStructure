@@ -9,6 +9,7 @@ function PostCreate() {
         e.preventDefault()
         axios.post("http://localhost:4000/posts" , {"title" : PostValue})
         console.log(PostValue)
+        setPostValue("")
 
     }
   return (
